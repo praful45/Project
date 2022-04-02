@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import './App.css';
 import Expenses from './ExpenseTracker/Expenses/Expenses';
+import NewExpense from './ExpenseTracker/NewExpense/NewExpense';
 
 function App() {
   const expenses = [
@@ -23,9 +25,22 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const [expenseData, setExpenseData] = useState(expenses)
+
+  const finalData = (data) => {
+    setExpenseData(prev => {
+      return [
+        ...prev,
+        data
+      ]
+    })
+  }
+
   return (
     <div>
-      <Expenses items={expenses} />
+      <NewExpense finalData={finalData} />
+      <Expenses items={expenseData} />
     </div>)
 }
 
