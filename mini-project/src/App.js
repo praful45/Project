@@ -31,8 +31,8 @@ function App() {
   const finalData = (data) => {
     setExpenseData(prev => {
       return [
-        ...prev,
-        data
+        data,
+        ...prev
       ]
     })
   }
