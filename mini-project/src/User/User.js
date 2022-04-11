@@ -3,8 +3,9 @@ import Card from './UI/Card'
 import styles from './User.module.css'
 import Button from './UI/Button'
 
-function User() {
+function User(props) {
     const [user, setUser] = useState({
+        id: "",
         userName: "",
         age: ""
     })
@@ -13,6 +14,7 @@ function User() {
         setUser(prev => {
             return {
                 ...prev,
+                id: Math.floor(Math.random() * 100),
                 [e.target.name]: e.target.value,
             }
         })
@@ -28,7 +30,7 @@ function User() {
             console.log("less than 1 validation occured")
             return;
         }
-        console.log(user)
+        props.onAddUser(user)
         setUser({
             userName: "",
             age: ""
@@ -43,7 +45,6 @@ function User() {
                 <label htmlFor="age">Age(Years)</label>
                 <input id="age" type="number" onChange={changeUser} name="age" value={user.age} />
                 <Button type='submit'>Add User</Button>
-                <p>{`${user.userName} (${user.age} years old)`}</p>
             </form>
         </Card>
     )
