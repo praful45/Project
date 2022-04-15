@@ -1,3 +1,5 @@
 Module 7 - about the debugging, errors, react developer tools extension
 Module 8 - about solo proj... validations
-Module 9 - Starting basics theories
+Module 9 - React fragments <> </>
+            React Portals
+            Wrappers
