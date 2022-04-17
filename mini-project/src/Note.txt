@@ -4,3 +4,6 @@ Module 9 - React fragments <> </>
             React Portals
             Wrappers
             refs => useRef() hook. controlled vs uncotrolled
+
+Moudule 10 - Effect hook    
+                useEffect(()=>{...},[dependencies])
