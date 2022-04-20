@@ -1,3 +1,5 @@
+React cheat sheet link - https://www-freecodecamp-org.cdn.ampproject.org/c/s/www.freecodecamp.org/news/the-react-cheatsheet/amp/
+
 Module 7 - about the debugging, errors, react developer tools extension
 Module 8 - about solo proj... validations
 Module 9 - React fragments <> </>
