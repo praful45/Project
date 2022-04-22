@@ -7,6 +7,9 @@ function LoginRoot() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const loginHandler = (email, password) => {
+        if (email.isEmpty() || password.isEmpty()) {
+            console.log("not valid")
+        }
         setIsLoggedIn(true)
     }
     const logoutHandler = () => {
@@ -15,7 +18,7 @@ function LoginRoot() {
 
 
     return (<>
-        <MainHeader />
+        <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
         <main>
             {!isLoggedIn && <Login onLogin={loginHandler} />}
             {isLoggedIn && <Home onLogout={logoutHandler} />}
