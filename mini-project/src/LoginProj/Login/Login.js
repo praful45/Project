@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Button from '../../GlobalUI/Button';
 import Card from '../../GlobalUI/Card';
@@ -11,20 +11,27 @@ function Login(props) {
     const [passwordIsValid, setPasswordIsValid] = useState();
     const [formIsValid, setFormIsValid] = useState(false);
 
+    useEffect(() => {
+        const identifier = setTimeout(() => {
+            console.log('effect called for validity')
+            setFormIsValid(
+                enteredEmail.includes('@') && enteredPassword.trim().length > 6
+            )
+        }, 500)
+
+        return () => {
+            console.log("Clean Up")
+            clearTimeout(identifier)
+        }
+
+    }, [enteredEmail, enteredPassword])
+
     const emailChangeHandler = (e) => {
         setEnteredEmail(e.target.value);
-
-        setEmailIsValid(
-            e.target.value.includes('@') && enteredPassword.trim().length > 6
-        )
     }
 
     const passwordChangeHandler = (e) => {
         setEnteredPassword(e.target.value);
-
-        setFormIsValid(
-            e.target.value.trim().length > 6 && enteredEmail.includes('@')
-        )
     }
 
     const validateEmailHandler = () => {
