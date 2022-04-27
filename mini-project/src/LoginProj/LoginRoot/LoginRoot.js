@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Home from '../Home/Home'
 import Login from '../Login/Login'
 import MainHeader from '../MainHeader/MainHeader';
+import AuthContext from '../Store/auth-context';
 
 function LoginRoot() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,13 +27,16 @@ function LoginRoot() {
     }
 
 
-    return (<>
-        <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
-        <main>
-            {!isLoggedIn && <Login onLogin={loginHandler} />}
-            {isLoggedIn && <Home onLogout={logoutHandler} />}
-        </main>
-    </>)
+    return (
+        <AuthContext.Provider value={{
+            isLoggedIn: isLoggedIn
+        }}>
+            <MainHeader onLogout={logoutHandler} />
+            <main>
+                {!isLoggedIn && <Login onLogin={loginHandler} />}
+                {isLoggedIn && <Home onLogout={logoutHandler} />}
+            </main>
+        </AuthContext.Provider>)
 }
 
 export default LoginRoot
