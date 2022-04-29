@@ -16,3 +16,4 @@ Moudule 10 - Effect hook
                     -LoginRoot
                     -MainHeader
     UseReducer - const [state,dispatch] = UseReducer(reducerFn,initialState, initFn)
+    useContext - Theory part - const value = useContext(MyContext);
