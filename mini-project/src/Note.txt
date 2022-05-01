@@ -18,3 +18,4 @@ Moudule 10 - Effect hook
     UseReducer - const [state,dispatch] = UseReducer(reducerFn,initialState, initFn)
     useContext - Theory part - const value = useContext(MyContext);
                     creating context and using context
+                    just an update... currently at 1/3 of the course need to complete soon
