@@ -27,3 +27,13 @@ React Hooks Lists:
 -useMemo
 -useContext
 -useReducer
+
+Rules of Hooks
+* Only call React Hooks in React Functions
+    - React Component Functions
+    - Custom Hooks
+* Only call React Hooks at the Top Level
+    - Don't call them in nested Functions
+    - Don't call them in any block statements
+
+for useEffect() => always add everything you refer to inside of useEffect() as a dependency
