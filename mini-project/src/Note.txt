@@ -37,3 +37,7 @@ Rules of Hooks
     - Don't call them in any block statements
 
 for useEffect() => always add everything you refer to inside of useEffect() as a dependency
+
+useRef()
+If we tried to count how many times our application renders using the useState Hook, we would be caught in an infinite loop since this Hook itself causes a re-render.
+To avoid this, we can use the useRef Hook.
